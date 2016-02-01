@@ -1,4 +1,0 @@
-#!/bin/bash
-variable=$(printenv SHELL)
-echo "Hello, my shell is $variable"
-
