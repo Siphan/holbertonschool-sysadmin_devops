@@ -1,0 +1,3 @@
+1. Generate a private/public key pair using the command line. You will need to create a passphrase for your private key.
+2. You will use the public key to access the Sandbox. The public key will be added to the Sandbox so you that can have access to it, providing that you have a private key.
+3. The private key is what you will be prompted to use once your public key is accepted. You will need to enter the passphrase you chose when generating your private/public key pair. The private key is what will grant you access to the Sandbox. It has to be used in combination with the public key. 
