@@ -16,5 +16,3 @@ do
 done < "$file"
 echo "$a" # Displaying number of head requests
 echo "$b" # Displaying number of get requests
-
-
