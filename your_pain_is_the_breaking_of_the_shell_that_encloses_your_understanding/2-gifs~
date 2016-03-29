@@ -1,3 +1,0 @@
-#!/bin/bash
-find . -name "*.gif" -exec basename {} \;
-#find . -type f -name '*gif' -exec basename {} .gif \;
