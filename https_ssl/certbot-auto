@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# Download and run the latest release version of the Certbot client.
+#
+# NOTE: THIS SCRIPT IS AUTO-GENERATED AND SELF-UPDATING
+#
+# IF YOU WANT TO EDIT IT LOCALLY, *ALWAYS* RUN YOUR COPY WITH THE
+# "--no-self-upgrade" FLAG
+#
+# IF YOU WANT TO SEND PULL REQUESTS, THE REAL SOURCE FOR THIS FILE IS
+# letsencrypt-auto-source/letsencrypt-auto.template AND
+# letsencrypt-auto-source/pieces/bootstrappers/*
+
+set -e  # Work even if somebody does "sh thisscript.sh".
+
+# Note: you can set XDG_DATA_HOME or VENV_PATH before running this script,
+# if you want to change where the virtual environment will be installed
+XDG_DATA_HOME=${XDG_DATA_HOME:-~/.local/share}
+VENV_NAME="letsencrypt"
+VENV_PATH=${VENV_PATH:-"$XDG_DATA_HOME/$VENV_NAME"}
+VENV_BIN="$VENV_PATH/bin"
+LE_AUTO_VERSION="0.8.1"
+BASENAME=$(basename $0)
+USAGE="Usage: $BASENAME [OPTIONS]
+A self-updating wrapper script for the Certbot ACME client. When run, updates
+to both this script and certbot will be downloaded and installed. After
+ensuring you have the latest versions installed, certbot will be invoked with
+all arguments you have provided.
+
+Help for certbot itself cannot be provided until it is installed.
+
+  --debug                                   attempt experimental installation
+  -h, --help                                print this help
+  -n, --non-interactive, --noninteractive   run without asking for user input
+  --no-self-upgrade                         do not download updates
+  --os-packages-only                        install OS dependencies and exit
+  -v, --verbose                             provide more output
+
+All arguments are accepted and forwarded to the Certbot client when run."
